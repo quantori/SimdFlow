@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimdFlow", "src\SimdFlow\SimdFlow.csproj", "{9391FD03-13C7-4BA0-AEBD-311D1ADC0EA6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimdFlow.Tests", "tests\SimdFlow.Tests\SimdFlow.Tests.csproj", "{89582A0E-6237-450A-8F51-87257590172E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9391FD03-13C7-4BA0-AEBD-311D1ADC0EA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9391FD03-13C7-4BA0-AEBD-311D1ADC0EA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9391FD03-13C7-4BA0-AEBD-311D1ADC0EA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9391FD03-13C7-4BA0-AEBD-311D1ADC0EA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89582A0E-6237-450A-8F51-87257590172E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89582A0E-6237-450A-8F51-87257590172E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89582A0E-6237-450A-8F51-87257590172E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89582A0E-6237-450A-8F51-87257590172E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
