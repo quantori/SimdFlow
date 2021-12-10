@@ -3,7 +3,7 @@ name: Push Nuget Package to Azure Artifacts or GitHub Package Registry
 on:
   push:
     branches:
-      - 'master'
+      - 'main'
   pull_request:
     branches:
       - '*'
