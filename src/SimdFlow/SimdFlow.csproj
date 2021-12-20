@@ -3,6 +3,9 @@
     <PropertyGroup>
         <TargetFramework>net5.0</TargetFramework>
         <Nullable>enable</Nullable>
+        <AssemblyVersion>1.0.1</AssemblyVersion>
+        <PackageVersion>1.0.1</PackageVersion>
+        <FileVersion>1.0.1.0</FileVersion>
     </PropertyGroup>
 
 </Project>

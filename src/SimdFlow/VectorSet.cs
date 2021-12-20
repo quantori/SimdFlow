@@ -20,21 +20,12 @@ namespace SimdFlow
         {
             var srcLength = src.Length;
             dataLength = dataLength == 0 ? srcLength : dataLength;
-
-            _tail = new T[VectorSize];
-            var tailLength = srcLength % VectorSize;
-            if (tailLength != 0)
-            {
-                var tailStart = VectorSize * (srcLength / VectorSize);
-                src.Slice(tailStart, tailLength).CopyTo(_tail);
-            }
-
+            
             DataLength = dataLength;
             _memory = src;
         }
 
         private readonly ReadOnlyMemory<T> _memory;
-        private readonly T[] _tail;
         public int DataLength { get; }
 
         public ReadOnlyMemory<T> GetData()
@@ -49,10 +40,7 @@ namespace SimdFlow
 
             for (var i = 0; i < memoryLength; i += VectorSize)
             {
-                var left = _memory.Length - i;
-                var slice = left >= VectorSize ? _memory.Slice(i, VectorSize).Span : _tail;
-
-                var vector = new Vector<T>(slice);
+                var vector = GetVectorAtPosition(this, i);
                 var r = func(vector);
                 r.CopyTo(result, i);
             }
@@ -124,7 +112,10 @@ namespace SimdFlow
             var left = memory.Length - start;
             if (left < VectorSize)
             {
-                return new Vector<T>(set._tail);
+                Span<T> ar = stackalloc T[VectorSize];
+                ar.Clear();
+                memory[start..].Span.CopyTo(ar);
+                return new Vector<T>(ar);
             }
 
             var slice = memory.Slice(start, VectorSize);
